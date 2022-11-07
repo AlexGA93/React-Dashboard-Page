@@ -9,6 +9,9 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 // Project Components
 import { Navbar, Footer, Sidebar, ThemeSettings, LineChart } from "./components";
 
+// useStateContext to declare a state
+import { useStateContext } from './contexts/ContextProvider';
+
 // Pages
 import {
   Ecommerce,
@@ -31,8 +34,9 @@ import {
 import "./App.css";
 
 function App() {
-  // activeMenu state
-  const activeMenu = true;
+  // activeMenu state from usecontext by context provider
+  // const activeMenu = true;
+  const { activeMenu } = useStateContext();
 
   return (
     <div className="App">
