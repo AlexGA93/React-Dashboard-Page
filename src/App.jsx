@@ -32,7 +32,7 @@ import "./App.css";
 
 function App() {
   // activeMenu state
-  const activeMenu = false;
+  const activeMenu = true;
 
   return (
     <div className="App">
