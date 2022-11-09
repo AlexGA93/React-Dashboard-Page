@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 // react icons
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
