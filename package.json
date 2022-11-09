@@ -5,6 +5,7 @@
   "dependencies": {
     "@syncfusion/ej2-react-charts": "^20.3.56",
     "@syncfusion/ej2-react-grids": "^20.3.56",
+    "@syncfusion/ej2-react-kanban": "^20.3.56",
     "@syncfusion/ej2-react-popups": "^20.3.56",
     "@syncfusion/ej2-react-schedule": "^20.3.56",
     "@testing-library/jest-dom": "^5.16.5",
