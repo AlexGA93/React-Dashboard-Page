@@ -15,13 +15,13 @@ import {
   ColumnsDirective,
 } from "@syncfusion/ej2-react-grids";
 
-import { ordersData, contextMenuItems, ordersGrid } from "../data/dummy";
+import { ordersData, ordersGrid } from "../data/dummy";
 
 import { Header } from "../components";
 
 const Orders = () => {
   return (
-    <div className="m-2 md:m-10 p-2 md:p-10">
+    <div className="m-2 md:m-10 p-2 md:p-10 dark:bg-secondary-dark-bg rounded-3xl">
       <Header category="Page" title="Orders" />
       {/*  Grid Element */}
       <GridComponent
@@ -34,14 +34,23 @@ const Orders = () => {
         allowSorting
       >
         <ColumnsDirective>
-          {
-            ordersGrid.map((item, index) => (
-              <ColumnDirective key={index} {...item} />
-            ))
-          }
+          {ordersGrid.map((item, index) => (
+            <ColumnDirective key={index} {...item} />
+          ))}
         </ColumnsDirective>
         {/* To access to the rest of the pages we must inject as services */}
-        <Inject services={[Resize, Sort, ContextMenu, Filter, Page, ExcelExport, Edit, PdfExport]} />
+        <Inject
+          services={[
+            Resize,
+            Sort,
+            ContextMenu,
+            Filter,
+            Page,
+            ExcelExport,
+            Edit,
+            PdfExport,
+          ]}
+        />
       </GridComponent>
     </div>
   );
