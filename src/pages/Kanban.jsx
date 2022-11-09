@@ -22,9 +22,9 @@ const Kanban = () => {
         // data
         dataSource={kanbanData}
         // card settings
-        cardSettings={{ 
-          contentField: 'Summary', 
-          headerField: 'Id'
+        cardSettings={{
+          contentField: "Summary",
+          headerField: "Id",
         }}
         keyField="Status"
       >
