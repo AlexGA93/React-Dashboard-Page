@@ -16,20 +16,17 @@ import { Header } from "../components";
 
 const Employees = () => {
   return (
-    <div className="m-2 md:m-10 p-2 md:p-10">
+    <div className="m-2 md:m-10 p-2 md:p-10 dark:bg-secondary-dark-bg rounded-3xl">
       <Header category="Page" title="Employees" />
       {/*  Grid Element */}
       <GridComponent
-
         // table data
         dataSource={employeesData}
         // pagination
         allowPaging
         // sorting
         allowSorting
-
-        toolbar={['Search']}
-
+        toolbar={["Search"]}
         width="auto"
       >
         <ColumnsDirective>

@@ -42,10 +42,10 @@ import "./App.css";
 function App() {
   // activeMenu state from usecontext by context provider
   // const activeMenu = true;
-  const { activeMenu } = useStateContext();
+  const { activeMenu, themeSettings, setThemeSettings, currentMode } = useStateContext();
 
   return (
-    <div className="App">
+    <div className={ currentMode === 'Dark' ? 'dark' : 'light' }>
       {/* React Router Dom's Routes system */}
       <Router>
         <div className="flex relative dark:bg-main-dark-bg">
@@ -53,6 +53,8 @@ function App() {
           <div className="fixed right-4 bottom-4" style={{ zIndex: "1000" }}>
             <TooltipComponent content="Settings" position="Top">
               <button
+                // display theme settings changing state from this button
+                onClick={()=> setThemeSettings(true)} 
                 type="button"
                 className="text-3x1 p-3 hover:drop-shadow-x1 hover:bg-light-gray text-white"
                 // background will change dynamically when uer select a them inside this sidebar
@@ -80,7 +82,7 @@ function App() {
 
           {/* ----------------------------------------Navbar and Route System------------------------------------------------- */}
           <div
-            className={`dark:bg-main-bg bg-main-bg min-h-screen w-full ${
+            className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full ${
               activeMenu ? "md:ml-72" : "flex-2"
             }`}
           >
@@ -89,6 +91,10 @@ function App() {
             </div>
             {/* Routes */}
             <div>
+
+              {/* Theme Settings visible only when themeSettings is true */}
+              { themeSettings && <ThemeSettings />}
+
               <Routes>
                 {/* Dashboard */}
                 <Route path="/" element={<Ecommerce />} />

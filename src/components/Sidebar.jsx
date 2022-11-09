@@ -12,7 +12,7 @@ import { useStateContext } from '../contexts/ContextProvider';
 const Sidebar = () => {
   // local state
   // const activeMenu = true;
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext();
 
   // function to handle close or open sidebar
   const handleCloseSideBar = () => {
@@ -60,6 +60,10 @@ const Sidebar = () => {
                   <NavLink
                     to={`/${link.name}`}
                     key={link.name}
+                    // when pressed state isActive change and it causes that It style changes too
+                    style={ ({isActive}) => ({
+                      backgroundColor: isActive ? currentColor : ''
+                    }) }
                     // When We push a link We want to close the sidebar ONLY if screen is lower than 900 px
                     onClick={handleCloseSideBar}
                     className={({ isActive }) => isActive ? activeLink : normalLink}
