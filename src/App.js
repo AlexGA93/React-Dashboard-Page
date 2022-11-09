@@ -9,10 +9,8 @@ import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 // Project Components
 import {
   Navbar,
-  Footer,
   Sidebar,
   ThemeSettings,
-  LineChart,
 } from "./components";
 
 // useStateContext to declare a state
@@ -35,6 +33,7 @@ import {
   ColorPicker,
   ColorMapping,
   Editor,
+  Line
 } from "./pages";
 
 import "./App.css";
@@ -109,7 +108,7 @@ function App() {
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/color-picker" element={<ColorPicker />} />
                 {/* Charts */}
-                <Route path="/line" element={<LineChart />} />
+                <Route path="/line" element={<Line />} />
                 <Route path="/area" element={<Area />} />
                 <Route path="/bar" element={<Bar />} />
                 <Route path="/pie" element={<Pie />} />
